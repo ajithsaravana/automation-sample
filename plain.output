@@ -1,0 +1,90 @@
+Feature: test login functionality
+
+  Scenario Outline: login kyn webapp -- @1.1 
+    When launch chrome browser ... failed in 3.464s
+Traceback (most recent call last):
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 358, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x000001D4B9B1D150>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 489, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='chromedriver.storage.googleapis.com', port=443): Max retries exceeded with url: /113.0.5672/chromedriver_win32.zip (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001D4B9B1D150>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\behave\model.py", line 1329, in run
+    match.run(runner.context)
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\behave\matchers.py", line 98, in run
+    self.func(context, *args, **kwargs)
+  File "features\steps\loginStep.py", line 25, in step
+    service=Service(ChromeDriverManager().install()))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\webdriver_manager\chrome.py", line 39, in install
+    driver_path = self._get_driver_path(self.driver)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\webdriver_manager\core\manager.py", line 30, in _get_driver_path
+    file = self._download_manager.download_file(driver.get_url())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\webdriver_manager\core\download_manager.py", line 28, in download_file
+    response = self._http_client.get(url)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\webdriver_manager\core\http.py", line 32, in get
+    resp = requests.get(url=url, verify=self._ssl_verify, stream=True, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 565, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='chromedriver.storage.googleapis.com', port=443): Max retries exceeded with url: /113.0.5672/chromedriver_win32.zip (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001D4B9B1D150>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+Captured logging:
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 113.0.5672
+INFO:WDM:Get LATEST chromedriver version for google-chrome 113.0.5672
+INFO:WDM:About to download new driver from https://chromedriver.storage.googleapis.com/113.0.5672/chromedriver_win32.zip
+
