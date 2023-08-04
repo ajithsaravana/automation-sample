@@ -2,7 +2,6 @@ values = {
 
     "kynurl": "https://stage-kyn-adminwebapp.azurewebsites.net/liverequest",
 
-
 }
 
 elements = {
