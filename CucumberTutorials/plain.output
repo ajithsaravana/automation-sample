@@ -1,0 +1,33 @@
+Feature: test login functionality
+
+  Scenario: Login using web whatsapp wait till Home page
+
+Feature: test login functionality
+
+  Scenario Outline: Login using web stalin ani -- @1.1 
+
+  Scenario Outline: Login with different set of platform -- @1.1 
+
+  Scenario Outline: Create Ground task and verify whether created ground task is listed in task list page -- @1.1 
+    When launch chrome browser ... passed in 3.137s
+    Then we visit stalinani login ... passed in 1.792s
+    When Login using Google platform with ajithsaravanamoorthy@theproindia.com and March@199628 ... passed in 10.109s
+    Then create task ... failed in 0.516s
+Traceback (most recent call last):
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\behave\model.py", line 1329, in run
+    match.run(runner.context)
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\behave\matchers.py", line 98, in run
+    self.func(context, *args, **kwargs)
+  File "features\steps\stalin.py", line 150, in step
+    select = Select(elementToWaitTillHomePageLoads)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AjithSaravanamoorthy\AppData\Local\Programs\Python\Python311\Lib\site-packages\selenium\webdriver\support\select.py", line 36, in __init__
+    raise UnexpectedTagNameException(f"Select only works on <select> elements, not on {webelement.tag_name}")
+selenium.common.exceptions.UnexpectedTagNameException: Message: Select only works on <select> elements, not on ng-select
+
+
+Captured logging:
+INFO:WDM:====== WebDriver manager ======
+INFO:WDM:Get LATEST chromedriver version for google-chrome 111.0.5563
+INFO:WDM:Driver [C:\Users\AjithSaravanamoorthy\.wdm\drivers\chromedriver\win32\111.0.5563\chromedriver.exe] found in cache
+
